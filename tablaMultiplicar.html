@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Pitagoras</title>
+    <link href="estilos.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>Tabla de Pitágoras</h1>
+
+<script>
+
+    var tamaño = window.prompt("¿De que tamaño lo quieres?");
+    
+    function pitagoras(n)
+    {
+    var tabla = "";
+    var fila;
+    for (var i = 0; i <= n; i++) 
+    {
+        fila = "";
+        for (var j = 0; j <= n; j++) 
+        {
+            if (i == 0) 
+            {
+                if (j==0)
+                {
+                     fila += "<td class=\"azul\"><strong>"+ "X" +"</strong> </td>";
+                }
+                else
+                {
+                    fila += "<td class=\"verde\"><strong>"+j+"</strong> </td>";
+                }
+            } else 
+                if (j == 0) 
+                {
+                    fila += "<td class=\"verde\"><strong>"+i+"</strong> </td>";
+                } 
+                else 
+                    {
+                        fila+="<td>"+(i*j)+"</td>";
+                    }
+        }
+        tabla += "<tr>" + fila + "</tr>";
+    }
+    document.write("<table border=\"2\">" +tabla+"</table>");
+}
+
+
+pitagoras(tamaño);
+
+</script>   
+
+
+</body>
+</html>
